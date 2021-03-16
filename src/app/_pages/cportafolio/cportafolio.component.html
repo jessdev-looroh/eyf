@@ -1,0 +1,18 @@
+<div class="absolute">
+  <div class="contenedor-principal">
+    <div class="div-center">
+      <div
+        *ngFor="let img of galeria"
+        class="div-img-portafolio mat-elevation-z3"
+      >
+        <img
+          class="img-portafolio"
+          [src]="
+            img.portafolioImgenURL ||
+            'https://via.placeholder.com/600x400?text=[No hay galeria]'
+          "
+        />
+      </div>
+    </div>
+  </div>
+</div>

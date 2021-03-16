@@ -1,0 +1,68 @@
+<div class="absolute-movil">
+    <div class="contenedor-principal-movil" *ngFor="let c of contenidoArray"
+        [className]="isActivo[c.indice]? 'mostrar-contenedor contenedor-principal-movil':'ocultar-contenedor contenedor-principal-movil'">
+
+        <button mat-button *ngIf="anterior(c.indice)" class="btn-navigation-left-m" (click)="ver(c.indice-1)">
+            <mat-icon class="accent">navigate_before</mat-icon>
+            <span style="text-transform: capitalize;">{{contenidoArray[c.indice-1].nosotrosTitulo}}</span>
+        </button>
+        <p class="titulo-movil">{{c.nosotrosTitulo}}</p>
+        <button *ngIf="siguiente(c.indice)" class="btn-navigation-right-m" mat-button (click)="ver(c.indice+1)">
+            <span style="text-transform: capitalize;">{{contenidoArray[c.indice+1].nosotrosTitulo}}</span>
+            <mat-icon class="accent">navigate_next</mat-icon>
+        </button>
+        <div class="contenido-imagen-m">
+            <img [@fabOpenClose]="isActivo[c.indice]? 'fabOpened':'fabClosed'" class="img-nosotros-m"
+            [src]="c.nosotrosImagen || 'https://via.placeholder.com/400x400?text=[Imagen]'">
+        </div>
+        <div class="contenido-body-m">
+            <div class="contenido-text-m" [@textOpenClose]="isActivo[c.indice]? 'textOpened':'textClosed'">
+                <p>
+                    {{c.nosotrosDescripcion}}
+                </p>
+            </div>
+        </div>
+        <!-- 
+         -->
+    </div>
+
+</div>
+
+
+<div class="absolute">
+    <div class="contenedor-principal" *ngFor="let c of contenidoArray"
+        [className]="isActivo[c.indice]? 'mostrar-contenedor contenedor-principal':'ocultar-contenedor contenedor-principal'">
+        <div class="contenido-titulo">
+
+            <button mat-button *ngIf="anterior(c.indice)" class="btn-navigation-left" (click)="ver(c.indice-1)">
+                <mat-icon class="accent">navigate_before</mat-icon>
+                <span style="text-transform: capitalize;">{{contenidoArray[c.indice-1].nosotrosTitulo}}</span>
+            </button>
+            <div class="contenido-referencia-head">
+                <div [className]="isActivo[c.indice] ? 'seleccionado referencia-circle':'referencia-circle'"
+                    *ngFor="let c of contenidoArray, let i=index" (click)="ver(c.indice)">
+                </div>
+            </div>
+            <button *ngIf="siguiente(c.indice)" class="btn-navigation-right" mat-button (click)="ver(c.indice+1)">
+                <span style="text-transform: capitalize;">{{contenidoArray[c.indice+1].nosotrosTitulo}}</span>
+                <mat-icon class="accent">navigate_next</mat-icon>
+            </button>
+        </div>
+        <div class="contenido-texto" [@textOpenClose]="isActivo[c.indice]? 'textOpened':'textClosed'">
+            <h1 style="text-transform: capitalize;">{{c.nosotrosTitulo}}</h1>
+            <p>
+                {{c.nosotrosDescripcion}}
+            </p>
+        </div>
+        <div class="contenido-imagen">
+            <img [@fabOpenClose]="isActivo[c.indice]? 'fabOpened':'fabClosed'" class="img-nosotros"
+            [src]="c.nosotrosImagen || 'https://via.placeholder.com/400x400?text=[Imagen]'">
+        </div>
+        <div class="contenido-referencia-foot">
+            <div [className]="isActivo[c.indice] ? 'seleccionado referencia-circle':'referencia-circle'"
+                *ngFor="let c of contenidoArray, let i=index" (click)="ver(c.indice)">
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,112 @@
+<header class="mat-elevation-z6 header">
+  <mat-toolbar class="toolbar-color">
+    <img
+      [src]="logo || 'https://via.placeholder.com/400x400?text=[Logo]'"
+      alt="Logo-Alh-group "
+      class="logo_header"
+      routerLink="/"
+    />
+    <span class="spacer"></span>
+    <div class="cabecera-web">
+      <button
+        mat-button
+        *ngFor="let i of menuInicial"
+        routerLink="/{{ i.url }}"
+        (click)="cambiarColor(i.url)"
+        [className]="
+          isActive[i.url]
+            ? 'btn-active mat-button mat-button-base ng-star-inserted'
+            : 'mat-button mat-button-base ng-star-inserted'
+        "
+      >
+        <!-- mat-button mat-button-base ng-star-inserted active_class -->
+        <mat-icon class="icon-h">{{ i.icono }}</mat-icon>
+        {{ i.nombre }}
+      </button>
+    </div>
+    <div class="cabecera-movil">
+      <button mat-icon-button (click)="sidnavCabecera.toggle()">
+        <mat-icon *ngIf="!sidnavCabecera.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidnavCabecera.opened">close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</header>
+
+<mat-sidenav-container class="sidnav-container-menu-movil">
+  <mat-sidenav
+    #sidnavCabecera
+    mode="over"
+    [fixedInViewport]="true"
+    [fixedTopGap]="64"
+    [fixedBottomGap]="0"
+    class="sidnav-menu-movil"
+  >
+    <mat-nav-list class="capital-letter padding-0">
+      <a mat-list-item routerLink="" class="titulo_sidnav"> Menú </a>
+      <a
+        mat-list-item
+        routerLink="/{{ item.url }}"
+        *ngFor="let item of menuInicial"
+        (click)="sidnavCabecera.toggle(); cambiarColor(item.url)"
+        [routerLinkActive]="'active_class'"
+      >
+        <!-- [className]="isActive[item.url] ? 'active_class mat-list-item ng-star-inserted' : 'mat-list-item ng-star-inserted'" -->
+        <mat-icon class="icon-list-item"> {{ item.icono }}</mat-icon>
+        {{ item.nombre }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content> </mat-sidenav-content>
+</mat-sidenav-container>
+
+<div class="main_content" (click)="sidnavCabecera.close()">
+  <router-outlet> </router-outlet>
+</div>
+
+<div class="footer-movil alignFooter mat-elevation-z6">
+  <div class="redes-contacto-movil">
+    <img
+      class="img-red-movil"
+      *ngFor="let r of redesSociales"
+      src="../assets/iconos/redes sociales/{{ r.iconoUrl }}.webp"
+      (click)="visitar(r.url)"
+    />
+  </div>
+</div>
+<div class="footer alignFooter mat-elevation-z6">
+  <div class="redes-contacto">
+    <img
+      class="img-red"
+      *ngFor="let r of redesSociales"
+      src="../assets/iconos/redes sociales/{{ r.iconoUrl }}.webp"
+      (click)="visitar(r.url)"
+    />
+  </div>
+  COPYRIGHT © {{ periodo }} {{ nombreEmpresa }} - Todos los derechos reservados.
+  <div class="contacto">
+    <div (click)="visitar_looroh()" style="cursor: pointer">
+      Desarrollado por:
+      <img
+        class="img_align"
+        src="../assets/iconos/looroh_logo_light.webp"
+        alt="LO"
+      />
+      &nbsp;
+      <strong>Looroh</strong>
+    </div>
+  </div>
+</div>
+<div class="footer-contacto-movil alignFooter">
+  <div (click)="visitar_looroh()" style="cursor: pointer">
+    Desarrollado por:
+    <img
+      class="img_align"
+      src="../assets/iconos/looroh_logo_light.webp"
+      alt="LO"
+      (click)="visitar_looroh()"
+    />
+    &nbsp;
+    <strong>Looroh</strong>
+  </div>
+</div>

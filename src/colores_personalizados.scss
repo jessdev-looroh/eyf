@@ -1,0 +1,52 @@
+
+$primaryColor : #0060D3;
+$accent: #FF5B00;
+$blanco : #ffffff;
+$negro : #020202;
+$b2:  #353535;
+$b1: #f9f9f9;
+$b3: #747474;
+$b4: #bcbcbc;
+
+
+//colores cuando una opcion es activa
+$activeColor: $primaryColor;
+$activeTextColor: $blanco;
+
+//colores cuando el boton del menu se activa
+$activeBtnColor: $blanco;
+$activeBtnTextColor: $primaryColor;
+
+
+//colores de fondo 
+$fondoContactanosIzquierda: #f9f9f9 ;
+
+
+
+///COLORES DE INPUT OUTLINE
+
+/* ::ng-deep .mat-form-field-outline{
+    background: white;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.32), 0 6px 10px 0 rgba(0, 0, 0, 0.34), 0 1px 18px 0 rgba(0, 0, 0, 0.32);
+    border-radius: 5px;
+}  */
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+    background: white ;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.32);
+    border-radius: 0 28px 0 0 !important;
+}
+
+::ng-deep .mat-tab-label{
+    width: 100%;
+    
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,.accent .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background-color: $accent;
+}
+
+::ng-deep .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex{
+    background-color:white
+}
+::ng-deep .mat-raised-button[disabled][disabled] {
+    background-color: darkgrey;
+}

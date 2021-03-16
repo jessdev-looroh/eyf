@@ -1,0 +1,176 @@
+@import '../../../colores_personalizados.scss';
+
+.spinner-carga{
+    position: relative;
+    top: 240px;
+    left: 43%;
+    height: 0px;
+    z-index: 3;
+}
+.contenedor-contactanos{
+    display: grid;  
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 70px;
+    width: 100%;
+}
+.contenedor-redes{
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
+    margin: 40px auto;
+    justify-content: center;
+}
+.contenedor-text{
+    display: flex;
+    flex-flow: column;
+    margin: 40px;
+}
+.h2-center{
+    text-align: center;
+    padding: 0 30px;
+    margin-bottom: 40px;   
+}
+.span{
+    margin: 5px;
+    font-weight: 500;
+}
+.img-contacta{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    cursor: pointer;
+}
+.center-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+    flex-flow: column;
+    align-items: center;
+    
+}
+.input-contactanos{
+    width: 60%;
+}
+input.number-input::-webkit-outer-spin-button,
+input.number-input::-webkit-inner-spin-button {
+  display: none;
+}
+.btn-enviar{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 60%;
+    background-color: $primaryColor;
+    color: $blanco;
+}
+.izquierda{
+    background-image: url("../../../assets/fondos/fondo_servicios.webp");    
+    margin-bottom: 40px;
+}
+.form-center{
+    display: contents;
+}
+
+
+@media screen and (max-width: 1266px){
+    .contenedor-redes{
+        margin: 0 auto;
+    }
+    
+}
+@media screen and (max-width: 1198px){
+    .img-contacta{
+        height: 70px;
+        width: 70px;
+        margin: 10px;
+    }
+    
+}
+@media screen and (max-width: 950px){
+   
+    .contenedor-contactanos{
+
+        grid-template-columns: repeat(1, 1fr);
+        height: auto;
+        overflow: auto;
+        bottom: 81px;
+
+    }
+    .center-div{
+        margin-top: 2%;
+    }
+    
+}
+
+@media screen and (max-width: 574px){
+   
+    .contenedor-contactanos{
+
+        grid-template-columns: repeat(1, 1fr);
+        height: auto;
+        overflow: auto;
+        bottom: 125px;
+
+    }
+    .center-div{
+        margin-top: 2%;
+    }
+    .input-contactanos{
+        width:80%;
+    }
+    .btn-enviar{
+        width: 80%;
+    }
+    
+}
+@media screen and (max-width:510px){
+    .contenedor-contactanos{
+        bottom: 170px;
+    }
+}
+/* 
+
+@media screen and (max-width: 730px){
+    .contenedor-contactanos{
+        display: flex;
+        flex-flow: column;
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+    .izquierda{
+        width: 100%;
+        min-height: fit-content;
+        background-color: $fondoContactanosIzquierda;
+    }
+}
+ @media screen and (max-width:574px){
+    .contenedor-contactanos{
+        margin-bottom: 126px
+    }
+}
+@media screen and (max-width:510px){
+    .contenedor-contactanos{
+        margin-bottom: 170px
+    }
+}
+/*
+@media screen and (orientation: landscape){
+    .contenedor-contactanos{
+        margin-bottom: 80px
+    }
+} */
+/*  
+@media screen and (max-width: 420px){
+    .input-contactanos{
+        width: 80%;
+    }
+    .btn-enviar{
+        width: 80%;
+    }
+
+} */

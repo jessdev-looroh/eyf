@@ -1,0 +1,20 @@
+<div class="home-img">
+  <div class="home-background">
+    <div class="center-logo">
+      <img
+        [src]="logo_inicio || 'https://via.placeholder.com/400x400?text=[Logo]'"
+        class="logo_responsive"
+      />
+      <h1 class="h1_margin">{{ frase_inicio }}</h1>
+      <button
+        class="btn-contactanos"
+        mat-raised-button
+        [routerLink]="['/contactanos']"
+        routerLinkActive="router-link-active"
+      >
+        <mat-icon class="icon_h"> headset_mic</mat-icon>
+        Iniciar mi proyecto
+      </button>
+    </div>
+  </div>
+</div>

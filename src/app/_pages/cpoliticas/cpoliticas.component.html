@@ -1,0 +1,13 @@
+<div class="back_ground">
+
+    <div class="contenedor-center">
+        <mat-card class="card-width mat-elevation-z6" *ngFor="let item of cards" (click)="verMas(item)">
+            <img [src]="item.politicaImagenUrl || 'https://via.placeholder.com/400x400?text=[Imagen]'" class="card-img">
+            <mat-card-header>
+                <mat-card-title class="capitalLeter card-width-head">{{item.politicaNombre}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+
+</div>
