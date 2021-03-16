@@ -55,7 +55,7 @@ import {
 export class CnosotrosComponent implements OnInit {
   contenidoArray: Nosotros[] = [];
   isActivo: any[] = [];
-  rutaStatic = "../../../assets/archivos_subidos/nosotros/";
+  rutaStatic = "assets/archivos_subidos/nosotros/";
   constructor(private objNosotrosService: NosotrosService) {}
 
   ngOnInit() {

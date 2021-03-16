@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   isActive: [] = [];
   redesSociales: any[];
   logo: string;
-  rutaStatic: string = "/assets/archivos_subidos/header/";
+  rutaStatic: string = "assets/archivos_subidos/header/";
   tituloSubs$: Subscription;
 
   @ViewChild("sidnavCabecera", { static: true }) public sidNavMenu: MatSidenav;

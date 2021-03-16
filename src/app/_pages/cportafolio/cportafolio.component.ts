@@ -10,7 +10,7 @@ import { Portafolio } from "src/app/_model/portafolio";
 export class CportafolioComponent implements OnInit {
   clientes: Portafolio[] = [];
   galeria: Portafolio[] = [];
-  rutaStatic = "/assets/archivos_subidos/portafolio/";
+  rutaStatic = "assets/archivos_subidos/portafolio/";
 
   constructor(private objPortafolioService: PortafolioService) {}
 
